@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Salary Prediction</title>
+    </head>
+    <style>
+        form {width: 35%;}
+        
+        .result {
+            width: 35%;
+            border: 1px solid #ccc;
+        }
+
+        body {margin: 20px;}
+    </style>
+<body>
+    <h1>Predicting Salary based on Years of Experience</h1>
+    <form action = "{{ url_for('main') }}" method="POST">
+        <fieldset>
+            Years of Experience: <input name="years" type="number" required><br>
+            <br>
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+    <br>
+
+    <div class="result" align="center">
+        {% if result %}
+            {% for variable, value in original_input.items() %}
+                <b>{{ variable }}</b> : {{ value }}
+            {% endfor %}
+            <br>
+            <br> Predicted salary:
+               <p style="font-size:50px">{{ result }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
