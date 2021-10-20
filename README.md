@@ -10,3 +10,7 @@ This is a simple linear regression demo for salary prediction.
 2. Click "Predict" button.
 
 ![Demo](/static/img/SalaryPred.jpg)
+
+
+### Live Demo:
+https://pred-sal.herokuapp.com/
